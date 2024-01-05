@@ -3,7 +3,7 @@ name: Repackage MCP
 on:
   push:
     branches:
-      - master
+      - '*'
 
 jobs:
   build:
@@ -21,6 +21,7 @@ jobs:
         shell: bash
         run: |
           alias python=python2
+          apt update
           apt install dos2unix zip
           ./setupFML1.2.5.sh
       - name: Zip the Repository

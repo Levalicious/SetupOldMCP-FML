@@ -21,7 +21,7 @@ jobs:
         shell: bash
         run: |
           alias python=python2
-          sudo apt install dos2unix zip
+          apt install dos2unix zip
           ./setupFML1.2.5.sh
       - name: Zip the Repository
         run: zip -r release.zip .

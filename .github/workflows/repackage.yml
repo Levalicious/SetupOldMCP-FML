@@ -12,9 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Check Python Version
-        run: python --version
+        run: |
+          alias python=python2
+          python --version
       - name: Run Setup
-        run: ./setupFML1.2.5.sh
+        run: |
+          alias python=python2
+          ./setupFML1.2.5.sh
       - name: Zip the Repository
         run: zip -r release.zip .
       - name: Create Release

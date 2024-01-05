@@ -55,13 +55,6 @@ case "${machine}" in
   *)                                 lwjglBuild="2.9.3" ;;
 esac
 
-# Make sure the user is OK with files being deleted
-read -r -p "This will overwrite (delete) any files from an existing MCP environment. Continue (y/n)? " OVERWRITE_EXSISTING
-if [ "$OVERWRITE_EXSISTING" != "y" ] && [ "$OVERWRITE_EXSISTING" != "Y" ]; then
-  echo "Input was not y, exiting"
-  exit
-fi
-
 # Delete existing MCP files
 rm -rf ./mcp62/
 
